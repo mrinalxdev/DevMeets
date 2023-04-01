@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import MyMeeting from "./pages/MyMeeting";
 import UserDashboard from "./pages/UserDashboard";
 import UserLogin from "./pages/UserLogin";
+import PublicRoute from "./pages/PublicRoute";
 import CreateMeeting from "./pages/CreateMeeting";
 import OneOnOneMeeting from "./pages/OneOnOneMeeting";
 import VideoConference from "./pages/VideoConference";
@@ -13,6 +14,10 @@ import Quiz from "./pages/Quiz/Quiz";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "./app/hooks";
 import { setToasts } from "./app/slices/MeetingSlice";
+import Engage from "./pages/Engage";
+import Docs from "./pages/Docs";
+import ReactDocs from "./pages/Docs/ReactDocs";
+import JsDocs from "./pages/Docs/JsDocs";
 
 function App() {
   const toasts = useAppSelector((zoom) => zoom.meetings.toasts);
@@ -29,17 +34,19 @@ function App() {
   return (
     <EuiProvider>
       <Routes>
-        <Route path="/" element={"Hello this is Public Route"} />
+        <Route path="/" element={<PublicRoute/>} />
         <Route path="/login" element={<UserLogin />} />
         <Route path="/dashboard" element={<UserDashboard />} />
         <Route path="/create" element={<CreateMeeting />} />
         <Route path="/create1on1" element={<OneOnOneMeeting />} />
         <Route path="/videocon" element={<VideoConference />} />
-        <Route path="/mymeetings" element={<MyMeeting />} />
-        <Route path="/meetings" element={"This is Meeting Section"} />
-        <Route path="/engage" element={"This is Engage Page"} />
-        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/mymeetings" element={"Hello this is My meeting comp"} />
+        <Route path="/engage" element={<Engage/>} />
+        <Route path='/quiz' element={<Quiz />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/docs" element={< Docs/>} />
+        <Route path="/ReactDocs" element={< ReactDocs/>} />
+        <Route path="/JsDocs" element={< JsDocs/>} />
       </Routes>
 
       <EuiGlobalToastList

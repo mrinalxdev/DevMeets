@@ -18,6 +18,8 @@ import Engage from "./pages/Engage";
 import Docs from "./pages/Docs";
 import ReactDocs from "./pages/Docs/ReactDocs";
 import JsDocs from "./pages/Docs/JsDocs";
+import PythonDocs from "./pages/Docs/NextDocs";
+import NextDocs from "./pages/Docs/NextDocs";
 
 function App() {
   const toasts = useAppSelector((zoom) => zoom.meetings.toasts);
@@ -44,9 +46,11 @@ function App() {
         <Route path="/engage" element={<Engage />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/docs" element={<Docs />} />
-        <Route path="/ReactDocs" element={<ReactDocs />} />
-        <Route path="/JsDocs" element={<JsDocs />} />
+        <Route path="/docs" element={< Docs/>} />
+        <Route path="/ReactDocs" element={< ReactDocs/>} />
+        <Route path="/JsDocs" element={< JsDocs/>} />
+        <Route path="/NextDocs" element={< NextDocs/>} />
+        {/* <Route path="/PythonDocs" element={< PythonDocs/>} /> */}
       </Routes>
 
       <EuiGlobalToastList

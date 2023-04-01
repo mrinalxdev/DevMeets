@@ -50,23 +50,23 @@ const Docs = () => {
           <EuiFlexItem>
             <EuiCard
               icon={<EuiImage size="10rem" alt="image" src={create} />}
-              title={"Javascript"}
-              description="Javascript Documentation"
-              onClick={() => navigate("/JsDocs")}
+              title={"NextJs"}
+              description="NextJs Documentation"
+              onClick={() => navigate("/NextDocs")}
               paddingSize="xl"
               style={{width: '80vw'}}
             />
           </EuiFlexItem>
-          <EuiFlexItem>
+          {/* <EuiFlexItem>
             <EuiCard
               icon={<EuiImage size="10rem" alt="image" src={create} />}
-              title={"Javascript"}
-              description="Javascript Documentation"
-              onClick={() => navigate("/JsDocs")}
+              title={"Python"}
+              description="Python Documentation"
+              onClick={() => navigate("/PythonDocs")}
               paddingSize="xl"
               style={{width: '80vw'}}
             />
-          </EuiFlexItem>
+          </EuiFlexItem> */}
         </EuiFlexGroup>
         
       </div>

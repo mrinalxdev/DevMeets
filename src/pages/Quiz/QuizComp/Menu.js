@@ -8,6 +8,7 @@ function Menu() {
   );
   return (
     <div className="Menu">
+      <h1 style= {{ fontSize : '22px'}}>Just Press on the Desired Answer and go for the next question</h1>
       <label>Enter Your Name:</label>
       <input
         type="text"

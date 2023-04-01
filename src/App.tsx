@@ -2,15 +2,16 @@ import React from "react";
 import "@elastic/eui/dist/eui_theme_light.css";
 import { EuiProvider, EuiGlobalToastList } from "@elastic/eui";
 import { Routes, Route } from "react-router-dom";
+import MyMeeting from "./pages/MyMeeting";
 import UserDashboard from "./pages/UserDashboard";
 import UserLogin from "./pages/UserLogin";
 import CreateMeeting from "./pages/CreateMeeting";
 import OneOnOneMeeting from "./pages/OneOnOneMeeting";
-import VideoConference from './pages/VideoConference'
+import VideoConference from "./pages/VideoConference";
 import ErrorPage from "./pages/ErrorPage";
-import Quiz from './pages/Quiz/Quiz'
+import Quiz from "./pages/Quiz/Quiz";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "./app/hooks"
+import { useAppSelector } from "./app/hooks";
 import { setToasts } from "./app/slices/MeetingSlice";
 
 function App() {
@@ -34,9 +35,10 @@ function App() {
         <Route path="/create" element={<CreateMeeting />} />
         <Route path="/create1on1" element={<OneOnOneMeeting />} />
         <Route path="/videocon" element={<VideoConference />} />
-        <Route path="/mymeetings" element={"Hello this is My meeting comp"} />
+        <Route path="/mymeetings" element={<MyMeeting />} />
+        <Route path="/meetings" element={"This is Meeting Section"} />
         <Route path="/engage" element={"This is Engage Page"} />
-        <Route path='/quiz' element={<Quiz />} />
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 

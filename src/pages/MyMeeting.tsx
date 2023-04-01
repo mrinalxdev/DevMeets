@@ -6,8 +6,11 @@ import {
   EuiPanel,
   EuiBasicTable,
   EuiCopy,
-  EuiButtonIcon
+  EuiButtonIcon,
+  EuiBadge,
 } from "@elastic/eui";
+import { Link } from "react-router-dom";
+import moment from "moment";
 import { MeetingType } from "../lib/Types";
 import { query, where, getDocs } from "firebase/firestore";
 import { useAppSelector } from "../app/hooks";
@@ -58,6 +61,19 @@ const MyMeeting = () => {
     {
       field: "",
       name: "Status",
+      render: (meeting: MeetingType) => {
+        if (meeting.status) {
+          if (meeting.meetingDate === moment.defaultFormat("L")) {
+            return (
+              <EuiBadge color="success">
+                <Link style={{ color : 'black' }} to={`join.${meeting.meetingId}`} >Join</Link>
+              </EuiBadge>
+            );
+          }
+        } else {
+          <EuiBadge color="danger">Cancelled</EuiBadge>;
+        }
+      },
     },
     {
       field: "",
@@ -66,14 +82,20 @@ const MyMeeting = () => {
     {
       field: "meetingId",
       name: "Copy Link ",
-      render: (meeting: string) => {
-        return <EuiCopy textToCopy={`${process.env.REACT_APP_HOST}/`}>
-            {
-              (copy : any) => 
-                <EuiButtonIcon iconType='copy' onClick={copy} arial-labe='Meeting Link' />
-              
-            }
-        </EuiCopy>;
+      render: (meetingId: string) => {
+        return (
+          <EuiCopy
+            textToCopy={`${process.env.REACT_APP_HOST}/join/${meetingId}`}
+          >
+            {(copy: any) => (
+              <EuiButtonIcon
+                iconType="copy"
+                onClick={copy}
+                arial-labe="Meeting Link"
+              />
+            )}
+          </EuiCopy>
+        );
       },
     },
   ];

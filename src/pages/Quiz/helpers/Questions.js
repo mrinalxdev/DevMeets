@@ -50,10 +50,10 @@ export const Questions = [
     {
       prompt: "Which character is used to break up a code line within a text string in JavaScript?",
       optionA: "Single quote (')",
-      optionB: "Single backslash (\)",
+      optionB: "Single backslash ",
       optionC: "Double quote",
       optionD: "Tipple single quote (''')",
-      asnwer: "Single backslash (\)"
+      asnwer: "Single backslash "
     },
     {
       prompt: "What is the main difference between var and let keywords in JavaScript?",

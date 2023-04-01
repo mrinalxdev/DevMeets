@@ -18,14 +18,14 @@ function MainQuiz() {
   };
 
   const nextQuestion = () => {
-    if (Questions[currentQuestion].asnwer == optionChosen) {
+    if (Questions[currentQuestion].asnwer === optionChosen) {
       setScore(score + 1);
     }
     setCurrentQuestion(currentQuestion + 1);
   };
 
   const finishQuiz = () => {
-    if (Questions[currentQuestion].asnwer == optionChosen) {
+    if (Questions[currentQuestion].asnwer === optionChosen) {
       setScore(score + 1);
     }
     setGameState("finished");
@@ -66,7 +66,7 @@ function MainQuiz() {
         </button>
       </div>
 
-      {currentQuestion == Questions.length - 1 ? (
+      {currentQuestion === Questions.length - 1 ? (
         <button onClick={finishQuiz} id="nextQuestion">
           Finish Quiz
         </button>

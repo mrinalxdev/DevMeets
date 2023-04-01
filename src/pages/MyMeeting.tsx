@@ -67,7 +67,7 @@ const MyMeeting = () => {
       field: "meetingId",
       name: "Copy Link ",
       render: (meeting: string) => {
-        return <EuiCopy textToCopy="">
+        return <EuiCopy textToCopy={`${process.env.REACT_APP_HOST}/`}>
             {
               (copy : any) => 
                 <EuiButtonIcon iconType='copy' onClick={copy} arial-labe='Meeting Link' />

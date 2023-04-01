@@ -1,12 +1,12 @@
 
-![App Screenshot](./assets/Devwindow.png)
+![App Screenshot](src/assets/Devwindow.png)
 
 A meet app which can used to create, join and schedule your meetings
 
-![App Screenshot](./assets/Why_DevMeets.png)
+![App Screenshot](src/assets/Why_DevMeets.png)
 If you do a lot of meetings and gets lost in fields of links to find the your next meeting link, then this is a perfect app that can help you 
 
-![App Screenshot](./assets/Dev_BuildTools.png)
+![App Screenshot](src/assets/Dev_BuildTools.png)
 
 ## Deployment
 

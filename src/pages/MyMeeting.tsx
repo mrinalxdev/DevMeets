@@ -50,6 +50,14 @@ const MyMeeting = () => {
     {
       field : '',
       name : 'Status',
+    },
+    {
+      field : '',
+      name :'Edit'
+    },
+    {
+      field : 'meetingId',
+      name : 'Copy Link '
     }
   ]
 

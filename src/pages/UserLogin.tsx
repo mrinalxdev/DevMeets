@@ -62,7 +62,7 @@ const UserLogin = () => {
                   src={animation}
                   alt="DevMeet"
                   size="550px"
-                  style={{ borderRadius: "20px" }}
+                  style={{ borderRadius: "20px 140px" }}
                 />
               </EuiFlexItem>
               <EuiFlexItem style={{ borderRadius: "30px" }}>
@@ -72,7 +72,7 @@ const UserLogin = () => {
                   <h3>Lets make your day more productive.</h3>
                 </EuiText>
                 <EuiSpacer size="l" />
-                <EuiButton fill onClick={login}>
+                <EuiButton fill onClick={login} style= {{ textDecoration : 'none'}}>
                   Login With Google
                 </EuiButton>
               </EuiFlexItem>

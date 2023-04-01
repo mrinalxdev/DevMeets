@@ -1,10 +1,18 @@
 import { useState } from "react";
-import { EuiProvider, EuiFlexGroup, EuiForm, EuiSpacer } from "@elastic/eui";
+import {
+  EuiProvider,
+  EuiFlexGroup,
+  EuiForm,
+  EuiSpacer,
+  EuiFormRow,
+  EuiSwitch,
+} from "@elastic/eui";
 import moment from "moment";
 import { addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../components/Header";
+import MeetingMaximumUsers from "../components/FormComponent/MeetingMaximumUsers"
 import UserNameField from "../components/FormComponent/UserNameField";
 import UsersMeetName from "../components/FormComponent/UsersMeetName";
 import MeetDateField from "../components/FormComponent/MeetDateField";
@@ -76,16 +84,18 @@ const VideoConference = () => {
         createdBy: uid,
         meetingId,
         meetingName,
-        meetingType: "1-on-1",
+        meetingType: anyoneCanJoin ? "anyone-can-join" : "video-conference ",
         invitedUsers: anyoneCanJoin
           ? []
           : selectedUsers.map((user: UserType) => user.uid),
         meetingDate: startDate.format("L"),
-        maxUsers: 1,
+        maxUsers: anyoneCanJoin ? 100 : size,
         status: true,
       });
       createToast({
-        title: "You are Assigned with Meet",
+        title: anyoneCanJoin
+          ? "You are assigned with a meet of Video Conference"
+          : "Video Conference Created",
         type: "success",
       });
       navigate("/dashboard");
@@ -93,39 +103,49 @@ const VideoConference = () => {
   };
 
   return (
-    <EuiProvider colorMode="dark">
-      <div
-        style={{ display: "flex", height: "100vh", flexDirection: "column" }}
-      >
-        <Header />
-        <EuiFlexGroup justifyContent="center" alignItems="center">
-          <EuiForm>
-            <UserNameField
-              label="Meeting Name"
-              placeholder="Meeting Name"
-              value={meetingName}
-              setMeetingName={setMeetingName}
-              isInvalid={showErrors.meetingName.show}
-              error={showErrors.meetingName.message}
+    <div style={{ display: "flex", height: "100vh", flexDirection: "column" }}>
+      <Header />
+      <EuiFlexGroup justifyContent="center" alignItems="center">
+        <EuiForm>
+          <EuiFormRow display="columnCompressedSwitch" label="Anyone Can Join">
+            <EuiSwitch
+              showLabel={false}
+              label="Anycan can join"
+              checked={anyoneCanJoin}
+              onChange={(e) => setAnyoneCanJoin(e.target.checked)}
             />
+          </EuiFormRow>
+          <UserNameField
+            label="Meeting Name"
+            placeholder="Meeting Name"
+            value={meetingName}
+            setMeetingName={setMeetingName}
+            isInvalid={showErrors.meetingName.show}
+            error={showErrors.meetingName.message}
+          />
+
+          {anyoneCanJoin ? (
+            <MeetingMaximumUsers value={size} setValue={setSize}  />
+          ) : (
             <UsersMeetName
               label=" Invite for the Meet"
               placeholder="Invite for 1 on 1 "
               options={users}
               onChange={onUserChange}
               selectedOptions={selectedUsers}
-              singleSelection={{ asPlainText: true }}
+              singleSelection={false}
               isClearable={false}
               isInvalid={showErrors.meetingUser.show}
               error={showErrors.meetingUser.message}
             />
-            <MeetDateField selected={startDate} setStartDate={setStartDate} />
-            <EuiSpacer />
-            <CreateMeetingButton createMeeting={createMeeting} />
-          </EuiForm>
-        </EuiFlexGroup>
-      </div>
-    </EuiProvider>
+          )}
+
+          <MeetDateField selected={startDate} setStartDate={setStartDate} />
+          <EuiSpacer />
+          <CreateMeetingButton createMeeting={createMeeting} />
+        </EuiForm>
+      </EuiFlexGroup>
+    </div>
   );
 };
 

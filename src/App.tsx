@@ -34,19 +34,19 @@ function App() {
   return (
     <EuiProvider>
       <Routes>
-        <Route path="/" element={<PublicRoute/>} />
+        <Route path="/" element={<PublicRoute />} />
         <Route path="/login" element={<UserLogin />} />
         <Route path="/dashboard" element={<UserDashboard />} />
         <Route path="/create" element={<CreateMeeting />} />
         <Route path="/create1on1" element={<OneOnOneMeeting />} />
         <Route path="/videocon" element={<VideoConference />} />
-        <Route path="/mymeetings" element={"Hello this is My meeting comp"} />
-        <Route path="/engage" element={<Engage/>} />
-        <Route path='/quiz' element={<Quiz />} />
+        <Route path="/mymeetings" element={<MyMeeting />} />
+        <Route path="/engage" element={<Engage />} />
+        <Route path="/quiz" element={<Quiz />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/docs" element={< Docs/>} />
-        <Route path="/ReactDocs" element={< ReactDocs/>} />
-        <Route path="/JsDocs" element={< JsDocs/>} />
+        <Route path="/docs" element={<Docs />} />
+        <Route path="/ReactDocs" element={<ReactDocs />} />
+        <Route path="/JsDocs" element={<JsDocs />} />
       </Routes>
 
       <EuiGlobalToastList

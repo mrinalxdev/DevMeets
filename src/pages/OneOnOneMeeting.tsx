@@ -88,7 +88,7 @@ const OneOnOneMeeting = () => {
   };
 
   return (
-    <EuiProvider colorMode="dark">
+
       <div
         style={{ display: "flex", height: "100vh", flexDirection: "column" }}
       >
@@ -120,7 +120,7 @@ const OneOnOneMeeting = () => {
           </EuiForm>
         </EuiFlexGroup>
       </div>
-    </EuiProvider>
+    
   );
 };
 

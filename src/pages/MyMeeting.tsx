@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { EuiProvider, EuiFlexGroup, EuiFlexItem, EuiPanel } from "@elastic/eui";
+import { EuiProvider, EuiFlexGroup, EuiFlexItem, EuiPanel, EuiBasicTable } from "@elastic/eui";
 import { MeetingType } from "../lib/Types";
 import { query, where, getDocs } from "firebase/firestore";
 import { useAppSelector } from "../app/hooks";
@@ -34,22 +34,45 @@ const MyMeeting = () => {
     }
   }, [uid]);
 
+  const columns = [
+    { 
+      field : 'meetingName',
+      name : 'Meeting Name',
+    },
+    {
+      field : 'meetingType',
+      name : 'Meeting Type',
+    },
+    {
+      field : 'meetingDate', 
+      name : 'Meeting Date'
+    },
+    {
+      field : '',
+      name : 'Status',
+    }
+  ]
+
+
   return (
-    <EuiProvider colorMode="dark">
+    
       <div
         style={{ display: "flex", height: "100vh", flexDirection: "column" }}
       >
         <Header />
 
-        <EuiFlexGroup>
+        <EuiFlexGroup justifyContent='center' style={{ margin : '1rem'}}>
             <EuiFlexItem>
                 <EuiPanel>
-                    
+                    <EuiBasicTable 
+                    items= {meetings}
+                    columns= {columns}
+                    />
                 </EuiPanel>
             </EuiFlexItem>
         </EuiFlexGroup>
       </div>
-    </EuiProvider>
+    
   );
 };
 

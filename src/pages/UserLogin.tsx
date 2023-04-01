@@ -9,7 +9,7 @@ import {
   EuiButton,
   EuiPanel,
 } from "@elastic/eui";
-import { GoogleAuthProvider,onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
 import { firebaseAuth, userRef } from "../lib/firebase";
 import { addDoc, getDocs, query, where } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";

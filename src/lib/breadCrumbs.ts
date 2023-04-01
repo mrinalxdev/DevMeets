@@ -22,7 +22,7 @@ export const getOneOnOneMeetingBreadCrumbs = (
     text: "Dashboard",
     href: "#",
     onClick: () => {
-      navigate("/");
+      navigate("/dashboard");
     },
   },
   {
@@ -34,5 +34,27 @@ export const getOneOnOneMeetingBreadCrumbs = (
   },
   {
     text: "Create 1 on 1 Meeting",
+  },
+];
+
+export const getVideoConferenceBreadCrumbs = (
+  navigate: NavigateFunction
+): Array<BreadCrumbsType> => [
+  {
+    text: "Dashboard",
+    href: "#",
+    onClick: () => {
+      navigate("/dashboard");
+    },
+  },
+  {
+    text: "Generate Meeting",
+    href: "#",
+    onClick: () => {
+      navigate("/videocon");
+    },
+  },
+  {
+    text: "Video Conference",
   },
 ];

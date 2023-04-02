@@ -67,6 +67,26 @@ const Docs = () => {
               style={{width: '80vw'}}
             />
           </EuiFlexItem>
+          <EuiFlexItem>
+            <EuiCard
+              icon={<EuiImage size="10rem" alt="image" src={create} />}
+              title={"Java"}
+              description="Java Documentation"
+              onClick={() => navigate("/JavaDocs")}
+              paddingSize="xl"
+              style={{width: '80vw'}}
+            />
+          </EuiFlexItem>
+          <EuiFlexItem>
+            <EuiCard
+              icon={<EuiImage size="10rem" alt="image" src={create} />}
+              title={"R"}
+              description="R Documentation"
+              onClick={() => navigate("/RDocs")}
+              paddingSize="xl"
+              style={{width: '80vw'}}
+            />
+          </EuiFlexItem>
         </EuiFlexGroup>
         
       </div>

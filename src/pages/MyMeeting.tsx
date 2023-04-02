@@ -155,7 +155,7 @@ const MyMeeting = () => {
         </EuiFlexItem>
       </EuiFlexGroup>
       {showEditFlyout && (
-        <EditFlyout closeFlyout={closeEditFlyout} meeting={editMeeting} />
+        <EditFlyout closeFlyout={closeEditFlyout} meetings={editMeeting} />
       )}
     </div>
   );

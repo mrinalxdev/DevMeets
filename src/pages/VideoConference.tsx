@@ -29,13 +29,13 @@ const VideoConference = () => {
   useAuth();
   const [users] = useFetchUsers();
   const [createToast] = useToast();
+  const navigate = useNavigate();
   const uid = useAppSelector((zoom) => zoom.auth.userInfo?.uid);
   const [meetingName, setMeetingName] = useState("");
   const [selectedUsers, setSelectedUsers] = useState<Array<UserType>>([]);
   const [startDate, setStartDate] = useState(moment());
   const [size, setSize] = useState(1);
   const [anyoneCanJoin, setAnyoneCanJoin] = useState(false);
-  const navigate = useNavigate();
   const [showErrors, setShowErrors] = useState<{
     meetingName: FieldErrorType;
     meetingUser: FieldErrorType;

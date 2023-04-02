@@ -19,9 +19,10 @@ import Engage from "./pages/Engage";
 import Docs from "./pages/Docs";
 import ReactDocs from "./pages/Docs/ReactDocs";
 import JsDocs from "./pages/Docs/JsDocs";
-import PythonDocs from "./pages/Docs/NextDocs";
 import NextDocs from "./pages/Docs/NextDocs";
 import TypeScriptDocs from "./pages/Docs/TypeScriptDocs";
+import JavaDocs from "./pages/Docs/JavaDocs";
+import RDocs from "./pages/Docs/RDocs";
 
 function App() {
   const toasts = useAppSelector((zoom) => zoom.meetings.toasts);
@@ -54,6 +55,8 @@ function App() {
         <Route path="/JsDocs" element={< JsDocs/>} />
         <Route path="/NextDocs" element={< NextDocs/>} />
         <Route path="/TypeScriptDocs" element={< TypeScriptDocs/>} />
+        <Route path="/JavaDocs" element={< JavaDocs/>} />
+        <Route path="/RDocs" element={< RDocs/>} />
       </Routes>
 
       <EuiGlobalToastList

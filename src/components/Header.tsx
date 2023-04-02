@@ -17,6 +17,7 @@ import {
   getCreatMeetingBreadCrumbs,
   getOneOnOneMeetingBreadCrumbs,
   getVideoConferenceBreadCrumbs,
+  getMyMeetingsBreadCrumbs,
 } from "../lib/breadCrumbs";
 
 const Header = () => {
@@ -39,6 +40,8 @@ const Header = () => {
       setBreadCrumbs(getOneOnOneMeetingBreadCrumbs(navigate));
     else if (pathname === "/videocon")
       setBreadCrumbs(getVideoConferenceBreadCrumbs(navigate));
+    else if (pathname == "/mymeetings")
+      setBreadCrumbs(getMyMeetingsBreadCrumbs(navigate));
   }, [location, navigate]);
 
   const section = [

@@ -28,7 +28,7 @@ export type MeetingJoinType = "anyone-can-join" |  "video-conference" | "1-on-1"
 export interface MeetingType {
   docId?: string;
   createdBy: string;
-  invitedUsers: number;
+  invitedUsers: Array<string>;
   meetingDate: string;
   meetingId: string;
   meetingName: string;

@@ -3,6 +3,7 @@ import "@elastic/eui/dist/eui_theme_light.css";
 import { EuiProvider, EuiGlobalToastList } from "@elastic/eui";
 import { Routes, Route } from "react-router-dom";
 import MyMeeting from "./pages/MyMeeting";
+import Meeting from "./pages/Meeting";
 import UserDashboard from "./pages/UserDashboard";
 import UserLogin from "./pages/UserLogin";
 import PublicRoute from "./pages/PublicRoute";
@@ -44,6 +45,7 @@ function App() {
         <Route path="/create1on1" element={<OneOnOneMeeting />} />
         <Route path="/videocon" element={<VideoConference />} />
         <Route path="/mymeetings" element={<MyMeeting />} />
+        <Route path="/meetings" element={<Meeting />} />
         <Route path="/engage" element={<Engage />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="*" element={<ErrorPage />} />

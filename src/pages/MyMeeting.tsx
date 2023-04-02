@@ -17,6 +17,7 @@ import { useAppSelector } from "../app/hooks";
 import useAuth from "../hooks/useAuth";
 import { meetingRef } from "../lib/firebase";
 import Header from "../components/Header";
+import EditFlyout from '../components/EditFlyout'
 
 const MyMeeting = () => {
   useAuth();
@@ -153,6 +154,9 @@ const MyMeeting = () => {
           </EuiPanel>
         </EuiFlexItem>
       </EuiFlexGroup>
+      {showEditFlyout && (
+        <EditFlyout closeFlyout={closeEditFlyout} meeting={editMeeting} />
+      )}
     </div>
   );
 };

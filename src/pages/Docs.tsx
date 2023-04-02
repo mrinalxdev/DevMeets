@@ -57,16 +57,16 @@ const Docs = () => {
               style={{width: '80vw'}}
             />
           </EuiFlexItem>
-          {/* <EuiFlexItem>
+          <EuiFlexItem>
             <EuiCard
               icon={<EuiImage size="10rem" alt="image" src={create} />}
-              title={"Python"}
-              description="Python Documentation"
-              onClick={() => navigate("/PythonDocs")}
+              title={"TypeScript"}
+              description="TypeScript Documentation"
+              onClick={() => navigate("/TypeScriptDocs")}
               paddingSize="xl"
               style={{width: '80vw'}}
             />
-          </EuiFlexItem> */}
+          </EuiFlexItem>
         </EuiFlexGroup>
         
       </div>

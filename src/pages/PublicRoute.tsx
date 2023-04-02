@@ -9,12 +9,16 @@ import {
     EuiProvider,
 } from "@elastic/eui";
 import useAuth from "../hooks/useAuth";
+// const video = require('../assets/')
 
 const PublicRoute = () => {
     const navigate = useNavigate();
 
     return (
         <EuiProvider colorMode="dark">
+            {/* <video >
+                <source src='../assets/DevMeet_video'/>
+            </video> */}
             <EuiFlexGroup justifyContent="center" alignItems='center' style={{ width: '100vw', height: '100vh' }}>
                 <EuiPanel paddingSize='xl' style={{ padding: "50px 60px", maxWidth: "800px", borderRadius: "30px", height: "200px" }}>
                     <EuiFlexGroup justifyContent='center' direction='column' alignItems='center'>

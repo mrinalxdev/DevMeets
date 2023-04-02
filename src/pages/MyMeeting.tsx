@@ -17,9 +17,11 @@ import { useAppSelector } from "../app/hooks";
 import useAuth from "../hooks/useAuth";
 import { meetingRef } from "../lib/firebase";
 import Header from "../components/Header";
-import EditFlyout from '../components/EditFlyout'
+import { useNavigate } from 'react-router-dom'
+// import EditFlyout from '../components/EditFlyout'
 
 const MyMeeting = () => {
+  const navigate = useNavigate()
   useAuth();
   const [meetings, setMeetings] = useState<any>([]);
   const uid = useAppSelector((zoom) => zoom.auth.userInfo?.uid);
@@ -105,7 +107,7 @@ const MyMeeting = () => {
     },
     {
       field: "",
-      name: "Edit",
+      name: "Create New",
       render: (meeting: MeetingType) => {
         return (
           <EuiButtonIcon
@@ -117,7 +119,7 @@ const MyMeeting = () => {
               moment(meeting.meetingDate).isBefore(moment().format("L")) ||
               !meeting.status
             }
-            onClick={() => openEditFlyout(meeting)}
+            onClick={() => navigate('/create')}
           />
         );
       },
@@ -154,9 +156,9 @@ const MyMeeting = () => {
           </EuiPanel>
         </EuiFlexItem>
       </EuiFlexGroup>
-      {showEditFlyout && (
+      {/* {showEditFlyout && (
         <EditFlyout closeFlyout={closeEditFlyout} meetings={editMeeting} />
-      )}
+      )} */}
     </div>
   );
 };
